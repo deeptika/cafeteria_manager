@@ -35,6 +35,7 @@
 
         <% if @current_user.role == "owner" %>
           <p> <%= link_to "Sales report" %> </p>
+          <p> <%= link_to "Manage clerks", clerks_path %> </p>
         <% end %>
       </div>
   <% end %>

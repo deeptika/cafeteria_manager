@@ -1,0 +1,28 @@
+<section>
+    <h1> Add New Clerk </h1>
+
+    <section>
+        <%= form_with url: users_path do |form| %>
+            <div>
+                <p>First Name </p>
+                <%= form.text_field :first_name %>
+            </div>
+            <div>
+                <p>Last Name </p>
+                <%= form.text_field :last_name %>
+            </div>
+            <div>
+                <p>Email </p>
+                <%= form.email_field :email %>
+            </div>
+            <div>
+                <p>Password </p>
+                <%= form.password_field :password %>
+            </div>
+            <div>
+                <%= form.submit "Add clerk" %>
+            </div>
+            <%= hidden_field_tag "role", "clerk" %>
+        <% end %>
+    </section>
+<section>

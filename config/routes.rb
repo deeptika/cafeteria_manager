@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "/home", to: "home#index"
   get "/yourorder", to: "orders#your_orders"
   post "viewcart", to: "orders#view"
+  get "/clerks", to: "clerks#index"
+  get "/new_clerk", to: "clerks#new"
   resources :users
   resources :orders
   resources :order_items
