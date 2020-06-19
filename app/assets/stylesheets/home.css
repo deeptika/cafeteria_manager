@@ -1,0 +1,83 @@
+.LoginPage {
+  max-width: 1000px;
+  margin: 200px auto;
+  font-family: sans-serif;
+  align-items: center;
+  color: antiquewhite;
+}
+
+.LoginPage-title {
+  margin-top: 100px;
+  font-size: 32px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+}
+
+.LoginPage-newUserLink {
+  text-align: center;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.LoginForm {
+  background-color: white;
+  display: flex;
+  margin: 50px auto;
+  max-width:400px;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.LoginForm-field {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+}
+
+.LoginForm-label {
+  padding-top: 5px;
+  font-size: 20px;
+  color: rgb(104, 102, 101);
+  font-weight: 1000;
+}
+
+.LoginForm-input1 {
+  margin-left: 80px;
+  margin-top: 17px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.LoginForm-input2 {
+  margin-left: 40px;
+  margin-top: 17px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.LoginForm-submitButton {
+  margin-left: 40%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  height: 50px;
+  border: 1px solid rgb(216, 98, 1);
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(216, 98, 1),rgb(212, 129, 46));
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
