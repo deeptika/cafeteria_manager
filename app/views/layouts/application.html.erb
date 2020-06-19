@@ -18,7 +18,7 @@
         <p> <%= link_to "Home ", home_path %> </p>
 
         <% if @current_user.role == "owner" %>
-          <p> <%= link_to "Menu" %> </p>
+          <p> <%= link_to "Menu", menus_path %> </p>
         <% end %>
 
         <p> <%= link_to "Menu items " %> </p>
