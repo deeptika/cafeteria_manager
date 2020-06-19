@@ -1,71 +1,100 @@
-class OrderItemsController < ApplicationController
-  before_action :set_order_item, only: [:show, :edit, :update, :destroy]
+class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
 
-  # GET /order_items
-  # GET /order_items.json
+  # GET /orders
+  # GET /orders.json
   def index
-    @order_items = OrderItem.where(order_id: params[:order_id])
+    @orders = Order.pending_order.order(date: :desc)
+    @your_order = false
   end
 
-  def set_order_item
-    @order_item = OrderItem.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def order_item_params
-    params.require(:order_item).permit(:order_id, :menu_item_id, :menu_item_name, :menu_item_price, :quantity, :total)
-  end
-
-  # GET /order_items/1
-  # GET /order_items/1.json
+  # GET /orders/1
+  # GET /orders/1.json
   def show
   end
 
-  # GET /order_items/new
+  def your_orders
+    @orders = @current_user.orders.order(date: :desc)
+    @your_order = true
+    render "index"
+  end
+
+  def report
+    @orders = Order.order(date: :desc)
+    @totals = OrderItem.group(:order_id).sum(:total)
+    @count = Order.count
+    @sum = OrderItem.sum(:total)
+  end
+
+  # GET /orders/new
   def new
-    @order_item = OrderItem.new
+    if Menu.active
+      current_menu_id = Menu.active
+    end
+    @menu_items = MenuItem.current_menu(current_menu_id)
   end
 
-  # GET /order_items/1/edit
+  # GET /orders/1/edit
   def edit
+    @status = @order.status == "preparing"
   end
 
-  # POST /order_items
-  # POST /order_items.json
+  def view
+    redirect_to carts_path
+  end
+
+  # POST /orders
+  # POST /orders.json
   def create
-    @order_item = OrderItem.new(order_item_params)
+    items = @current_user.carts
+    if items.count > 0
+      new_order = Order.create!(
+        user_id: @current_user.id,
+        date: Time.now.getutc,
+        delivered_at: nil,
+        status: "confirm",
+      )
+    end
 
-    respond_to do |format|
-      if @order_item.save
-        format.html { redirect_to @order_item, notice: "Order item was successfully created." }
-        format.json { render :show, status: :created, location: @order_item }
-      else
-        format.html { render :new }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+    items.each do |item|
+      OrderItem.create!(
+        order_id: new_order.id,
+        menu_item_id: item.menu_item.id,
+        menu_item_name: item.menu_item.menu_item_name,
+        menu_item_price: item.menu_item.menu_item_price,
+        quantity: item.quantity,
+        total: item.quantity * item.menu_item.menu_item_price,
+      )
+    end
+    if items.count > 0
+      items.destroy_all
+      redirect_to yourorder_path(notice: "Order Successfully placed")
+    else
+      flash[:error] = "Your Cart is empyt !!"
+      redirect_to carts_path
     end
   end
 
-  # PATCH/PUT /order_items/1
-  # PATCH/PUT /order_items/1.json
+  # PATCH/PUT /orders/1
+  # PATCH/PUT /orders/1.json
   def update
-    respond_to do |format|
-      if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: "Order item was successfully updated." }
-        format.json { render :show, status: :ok, location: @order_item }
-      else
-        format.html { render :edit }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
-      end
+    @order.update(status: params[:status])
+    @order.save
+
+    if params[:status] == "delivered"
+      @order.update(delivered_at: Time.now.utc)
+      @order.save
     end
+
+    redirect_to orders_path(notice: "Order Status Updated Successfully ")
   end
 
-  # DELETE /order_items/1
-  # DELETE /order_items/1.json
+  # DELETE /orders/1
+  # DELETE /orders/1.json
   def destroy
-    @order_item.destroy
+    @order.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url, notice: "Order item was successfully destroyed." }
+      format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -73,12 +102,12 @@ class OrderItemsController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_order_item
-    @order_item = OrderItem.find(params[:id])
+  def set_order
+    @order = Order.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
-  def order_item_params
-    params.require(:order_item).permit(:order_id, :menu_item_id, :menu_item_name, :menu_item_price, :quantity, :total)
+  def order_params
+    params.require(:order).permit(:user_id, :date, :delivered_at, :status)
   end
 end

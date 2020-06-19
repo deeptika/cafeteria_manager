@@ -4,7 +4,8 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @cart = Cart.joins(:menu_item).where(user_id: @current_user.id)
+    @cart = @current_user.carts
+    @amount = @cart.map { |item| item.quantity * item.menu_item.menu_item_price }.sum
   end
 
   # GET /carts/1
@@ -14,7 +15,6 @@ class CartsController < ApplicationController
 
   # GET /carts/new
   def new
-    @cart = Cart.joins(:menu_item).where(user_id: @current_user.id)
   end
 
   # GET /carts/1/edit

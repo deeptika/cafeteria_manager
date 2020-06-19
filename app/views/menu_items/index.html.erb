@@ -1,45 +1,30 @@
-<p id="notice"><%= params[:notice] %></p>
+<section>
 
-<% if @current_user.role == "owner" %>
-  <h3 > Select Menu </h3>
-  <%= render partial: "select_menu",
-             locals: {
-               menu_id: @current_menu_id,
-             } %>
-<% end %>
+    <h3 id="notice"><%= params[:notice] %></h3>
 
-<h1>Menu Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Menu</th>
-      <th>Menu item name</th>
-      <th>Menu item price</th>
-      <% if @current_user.role == "owner" %>
-        <th colspan="3"></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @menu_items.each do |menu_item| %>
-      <tr>
-        <td><%= menu_item.menu_id %></td>
-        <td><%= menu_item.menu_item_name %></td>
-        <td><%= menu_item.menu_item_price %></td>
-        <% if @current_user.role == "owner" %>
-          <td><%= link_to "Show", menu_item_path(menu_item, :current_menu_id => @current_menu_id) %></td>
-          <td><%= link_to "Edit", edit_menu_item_path(menu_item, :current_menu_id => @current_menu_id) %></td>
-          <td><%= link_to "Destroy", menu_item_path(menu_item, :current_menu_id => @current_menu_id), method: :delete, data: { confirm: "Are you sure?" } %></td>
-        <% end %>
-      </tr>
+    <% if @current_user.is_owner(@current_user.id) %>
+      <div>
+        <h3> Select Menu </h3>
+        <%= render partial: "select_menu",
+                   locals: {
+                     menu_id: @current_menu_id,
+                     menus: @menus,
+                   } %>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <h1>Menu Items</h1>
 
-<% if @current_user.role == "owner" %>
-  <%= link_to "New Menu Item", new_menu_item_path(:current_menu_id => @current_menu_id) %>
-<% end %>
+    <div>
+      <% if @current_user.is_owner(@current_user.id) %>
+        <%= link_to "+ Add Menu Item",
+                    new_menu_item_path(:current_menu_id => @current_menu_id) %>
+      <% end %>
+    </div>
+
+    <%= render partial: "display_menu",
+               locals: {
+                 menu_items: @menu_items,
+               } %>
+
+</section>

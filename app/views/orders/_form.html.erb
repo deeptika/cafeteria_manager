@@ -1,37 +1,23 @@
 <%= form_with(model: order, local: true) do |form| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+  <section>
+      <h4> Status <h4>
+          <div>
+              <%= radio_button_tag "status", "confirm", !(@status) %>
+              <p> Confirmed </p>
+          </div>
+          <div>
+              <%= radio_button_tag "status", "preparing", @status %>
+              <p> On your way </p>
+          </div>
+          <div>
+              <%= radio_button_tag "status", "delivered" %>
+              <p class="Order-status"> Delivered </p>
+          </div>
+          <div>
 
-      <ul>
-        <% order.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <div>
+              <%= submit_tag "Update Order", class: "Order-submit" %>
+          </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :delivered_at %>
-    <%= form.datetime_select :delivered_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  </section>
 <% end %>

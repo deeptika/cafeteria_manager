@@ -4,11 +4,13 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    if Menu.find_by(active: true)
-      @current_menu_id = Menu.find_by(active: true).id
+    @menus = Menu.all
+    if Menu.active()
+      @current_menu_id = Menu.active()
     end
+
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
-    @menu_items = MenuItem.where(menu_id: @current_menu_id)
+    @menu_items = MenuItem.current_menu(@current_menu_id)
   end
 
   # GET /menu_items/1
@@ -35,7 +37,7 @@ class MenuItemsController < ApplicationController
       menu_id: params[:menu_id],
       menu_item_name: params[:menu_item_name],
       menu_item_price: params[:menu_item_price],
-      stock: params[:stock],
+      image_url: params[:image_url],
     )
     if menu_item.save
       redirect_to menu_items_path(
@@ -51,6 +53,7 @@ class MenuItemsController < ApplicationController
   # PATCH/PUT /menu_items/1
   # PATCH/PUT /menu_items/1.json
   def update
+    menu_id = params[:current_menu_id]
     respond_to do |format|
       if @menu_item.update(menu_item_params)
         format.html {
@@ -74,7 +77,7 @@ class MenuItemsController < ApplicationController
       format.html {
         redirect_to action: "index",
                     current_menu_id: params[:current_menu_id],
-                    notice: "Menu item was successfully destroyed."
+                    notice: "Menu item was successfully Removed."
       }
       format.json { head :no_content }
     end
@@ -89,6 +92,6 @@ class MenuItemsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def menu_item_params
-    params.require(:menu_item).permit(:menu_id, :menu_item_name, :menu_item_price)
+    params.require(:menu_item).permit(:menu_id, :menu_item_name, :menu_item_price, :image_url)
   end
 end

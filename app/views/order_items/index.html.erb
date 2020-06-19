@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<section>
+  <p id="notice"><%= notice %></p>
 
-<h1>Order Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Order</th>
-      <th>Menu item name</th>
-      <th>Menu item price</th>
-      <th>Quantity</th>
-      <th>Total</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @order_items.each do |order_item| %>
+  <div>
+    <h3>Date : <%= @user_data["date"] %> </h3>
+    <h3>Order Id : <%= params[:order_id] %> </h3>
+    <h3>Name : <%= @user_data["name"] %> </h3>
+    <h3>Email : <%= @user_data["email"] %> </h3>
+  </div>
+  <p> <%= link_to "Back", :back %> </p>
+  <table>
+    <thead>
       <tr>
-        <td><%= order_item.order_id %></td>
-        <td><%= order_item.menu_item_name %></td>
-        <td><%= order_item.menu_item_price %></td>
-        <td><%= order_item.quantity %></td>
-        <td><%= order_item.total %></td>
+        <th>Description</th>
+        <th>Unit price</th>
+        <th>Quantity</th>
+        <th>Total</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @order_items.each do |order_item| %>
+        <tr>
+          <td><%= order_item.menu_item_name %></td>
+          <td><%= order_item.menu_item_price %></td>
+          <td><%= order_item.quantity %></td>
+          <td><%= order_item.total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2 class="OrderItem-total"> Total Amount = <%= @amount %> </h2>
+
+</section>

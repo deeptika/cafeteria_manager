@@ -1,0 +1,24 @@
+<section>
+    <% @menu_items.each do |menu_item| %>
+        <div>
+            <p> <%= menu_item.menu_item_name %> </p>
+            <div>
+                <p>  ₹ <%= menu_item.menu_item_price %> </p>
+
+                <div>
+                    <%= form_with url: carts_path do |form| %>
+                        <%= hidden_field_tag "menu_item_id", menu_item.id %>
+                        <%= hidden_field_tag "menu_id", menu_item.menu_id %>
+                        <%= hidden_field_tag "user_id", @current_user.id %>
+                        <%= number_field_tag "quantity", 0,
+                                             min: 0, class: "Order-quantity",
+                                             :onclick => "submit()" %>
+                    <% end %>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+    <% end %>
+</section>
