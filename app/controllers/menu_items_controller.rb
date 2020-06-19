@@ -4,7 +4,9 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @current_menu_id = Menu.find_by(active: true).id
+    if Menu.find_by(active: true)
+      @current_menu_id = Menu.find_by(active: true).id
+    end
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
     @menu_items = MenuItem.where(menu_id: @current_menu_id)
   end
