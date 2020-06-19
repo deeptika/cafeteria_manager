@@ -2,6 +2,12 @@ class SessionsController < ApplicationController
   skip_before_action :ensure_user_login
 
   def new
+    if current_user
+      redirect_to home_path
+    else
+      @current_user_id = session[:current_user_id]
+      render "new"
+    end
   end
 
   def index

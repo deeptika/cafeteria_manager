@@ -1,5 +1,19 @@
-<h1>New Menu Item</h1>
-
-<%= render 'form', menu_item: @menu_item %>
-
-<%= link_to 'Back', menu_items_path %>
+<section>
+    <h1> New Menu Item </h1>
+    <section>
+        <%= form_with url: menu_items_path do |form| %>
+            <div>
+                <p>Menu Item Name</p>
+                <%= form.text_field :menu_item_name %>
+            </div>
+            <div>
+                <p>Menu Item Price </p>
+                <%= form.text_field :menu_item_price %>
+            </div>
+            <div>
+                <%= form.submit "Add Item " %>
+            </div>
+            <%= hidden_field_tag "menu_id", @current_menu_id %>
+        <% end %>
+    </section>
+  </section>
