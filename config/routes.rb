@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "viewcart", to: "orders#view"
   get "/clerks", to: "clerks#index"
   get "/new_clerk", to: "clerks#new"
+  get "/sales_report", to: "orders#report"
   resources :users
   resources :orders
   resources :order_items

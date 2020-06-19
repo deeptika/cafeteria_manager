@@ -8,22 +8,9 @@ class CartsController < ApplicationController
     @amount = @cart.map { |item| item.quantity * item.menu_item.menu_item_price }.sum
   end
 
-  # GET /carts/1
-  # GET /carts/1.json
-  def show
-  end
-
-  # GET /carts/new
-  def new
-  end
-
   # GET /carts/1/edit
   def edit
-    cart_item = Cart.find(params[:id])
-
-    unless cart_item.user_id == @current_user.id
-      redirect_to carts_path
-    end
+    cart_item = @current_user.carts.find(params[:id])
   end
 
   # POST /carts
@@ -52,8 +39,11 @@ class CartsController < ApplicationController
   # PATCH/PUT /carts/1.json
   def update
     respond_to do |format|
-      if @cart
+      if @current_user.carts.find(params[:id])
         @cart.update(cart_params)
+        if @cart.quantity == 0
+          @cart.destroy
+        end
         format.html { redirect_to carts_path, notice: "Cart was successfully updated." }
         format.json { render :index, status: :ok, location: @cart }
       else
@@ -64,7 +54,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    if @cart
+    if @current_user.carts.find(params[:id])
       @cart.destroy
       respond_to do |format|
         format.html { redirect_to carts_url, notice: "Menu item  was successfully Removed." }

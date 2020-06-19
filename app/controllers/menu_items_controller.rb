@@ -1,5 +1,7 @@
 class MenuItemsController < ApplicationController
   before_action :set_menu_item, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_owner
+  skip_before_action :ensure_owner, only: [:index]
 
   # GET /menu_items
   # GET /menu_items.json

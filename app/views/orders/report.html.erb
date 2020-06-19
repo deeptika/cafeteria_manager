@@ -1,0 +1,49 @@
+<section>
+  <p id="notice"> <%= params[:notice] %> </p>
+
+  <h1>Sales report</h1>
+
+  <%= form_with url: sales_report_path, method: "GET", local: true do |form| %>
+    <section>
+      <p> From </p>
+      <%= date_field_tag "from_date", @from_date %>
+      <p> To </p>
+      <%= date_field_tag "to_date", @to_date %>
+      <%= text_field_tag "user_id", nil, value: params[:user_id],
+                                         placeholder: "User Id or name (optional)",
+                                         class: "Search-label" %>
+
+      <%= submit_tag "Get" %>
+    </section>
+  <% end %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Delivered at</th>
+        <th>Amount</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= order.user.first_name %> </td>
+          <td> <%= order.date %> </td>
+          <td> <%= order.delivered_at %> </td>
+          <td> <%= @totals[order.id] %> </td>
+          <td> <%= link_to "Show", order_items_path(order_id: order.id) %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <section>
+    <p> Total Orders : <%= @count %> </p>
+    <p> Total Amount : <%= @sum %> </p>
+  </section>
+</section>

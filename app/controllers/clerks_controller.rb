@@ -1,4 +1,6 @@
 class ClerksController < ApplicationController
+  before_action :ensure_owner
+
   def new
   end
 
