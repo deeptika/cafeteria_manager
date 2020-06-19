@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create", as: :sessions
   delete "/signout", to: "sessions#destroy", as: :destroy_session
   get "/home", to: "home#index"
+  get "/yourorder", to: "orders#your_orders"
+  post "viewcart", to: "orders#view"
   resources :users
   resources :orders
   resources :order_items

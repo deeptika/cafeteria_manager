@@ -4,7 +4,16 @@ class OrderItemsController < ApplicationController
   # GET /order_items
   # GET /order_items.json
   def index
-    @order_items = OrderItem.all
+    @order_items = OrderItem.where(order_id: params[:order_id])
+  end
+
+  def set_order_item
+    @order_item = OrderItem.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def order_item_params
+    params.require(:order_item).permit(:order_id, :menu_item_id, :menu_item_name, :menu_item_price, :quantity, :total)
   end
 
   # GET /order_items/1
@@ -28,7 +37,7 @@ class OrderItemsController < ApplicationController
 
     respond_to do |format|
       if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
+        format.html { redirect_to @order_item, notice: "Order item was successfully created." }
         format.json { render :show, status: :created, location: @order_item }
       else
         format.html { render :new }
@@ -42,7 +51,7 @@ class OrderItemsController < ApplicationController
   def update
     respond_to do |format|
       if @order_item.update(order_item_params)
-        format.html { redirect_to @order_item, notice: 'Order item was successfully updated.' }
+        format.html { redirect_to @order_item, notice: "Order item was successfully updated." }
         format.json { render :show, status: :ok, location: @order_item }
       else
         format.html { render :edit }
@@ -56,19 +65,20 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url, notice: 'Order item was successfully destroyed.' }
+      format.html { redirect_to order_items_url, notice: "Order item was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order_item
-      @order_item = OrderItem.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def order_item_params
-      params.require(:order_item).permit(:order_id, :menu_item_id, :menu_item_name, :menu_item_price, :quantity, :total)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order_item
+    @order_item = OrderItem.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def order_item_params
+    params.require(:order_item).permit(:order_id, :menu_item_id, :menu_item_name, :menu_item_price, :quantity, :total)
+  end
 end

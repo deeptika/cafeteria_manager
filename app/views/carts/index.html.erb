@@ -5,10 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Menu item</th>
+      <th>Item Ordered</th>
       <th>Quantity</th>
-      <th>Menu</th>
+      <th>From Menu</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,13 +15,11 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= cart.user_id %></td>
         <td><%= cart.menu_item_id %></td>
         <td><%= cart.quantity %></td>
         <td><%= cart.menu_id %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Edit", edit_cart_path(cart) %></td>
+        <td><%= link_to "Remove from cart", cart, method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +27,10 @@
 
 <br>
 
-<%= link_to 'New Cart', new_cart_path %>
+<div>
+    <%= form_with url: orders_path do |form| %>
+        <div class="Form-order">
+            <%= submit_tag "Order now", class: "Order-submit" %>
+        </div>
+    <% end %>
+</div>

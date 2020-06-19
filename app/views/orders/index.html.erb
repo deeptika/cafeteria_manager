@@ -17,12 +17,14 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.user_id %></td>
+        <td><%= order.user.first_name + " " + order.user.last_name %></td>
         <td><%= order.date %></td>
         <td><%= order.delivered_at %></td>
         <td><%= order.status %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Show", order_items_path(order_id: order.id) %></td>
+        <% if (not(@current_user.role == "customer")) and @your_order %>
+          <td><%= link_to "Edit", edit_order_path(order) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to "New Order", new_order_path %>

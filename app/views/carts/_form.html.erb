@@ -1,5 +1,5 @@
 <%= form_with(model: cart, local: true) do |form| %>
-  <% if cart.errors.any? %>
+  <% if cart and cart.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
 
@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.label :menu_id %>
+    <%= form.text_field :menu_id %>
   </div>
 
   <div class="field">
@@ -26,12 +26,7 @@
     <%= form.number_field :quantity %>
   </div>
 
-  <div class="field">
-    <%= form.label :menu_id %>
-    <%= form.text_field :menu_id %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+  <%= form.submit "Change my Order", class: "submit" %>
   </div>
 <% end %>
