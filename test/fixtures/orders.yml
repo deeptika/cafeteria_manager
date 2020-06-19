@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  date: 2020-06-19 12:25:00
+  delivered_at: 2020-06-19 12:25:00
+  status: MyString
+
+two:
+  user_id: 
+  date: 2020-06-19 12:25:00
+  delivered_at: 2020-06-19 12:25:00
+  status: MyString
