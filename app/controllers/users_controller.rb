@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_login
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # POST /users
-  # POST /users.json
   def create
     user_new = User.new(
       first_name: params[:first_name],

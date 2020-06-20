@@ -2,35 +2,25 @@ class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :ensure_owner
 
-  # GET /menus
-  # GET /menus.json
   def index
     @menus = Menu.all
   end
 
-  # GET /menus/1
-  # GET /menus/1.json
   def show
   end
 
-  # GET /menus/new
   def new
     @menu = Menu.new
   end
 
-  # GET /menus/1/edit
   def edit
   end
 
-  # POST /menus
-  # POST /menus.json
   def create
     @menu = Menu.new(menu_params)
-
     if @menu.active
       Menu.update_all(active: false)
     end
-
     respond_to do |format|
       if @menu.save
         format.html { redirect_to @menu, notice: "Menu was successfully created." }
@@ -42,8 +32,6 @@ class MenusController < ApplicationController
     end
   end
 
-  # PATCH/PUT /menus/1
-  # PATCH/PUT /menus/1.json
   def update
     Menu.update_all(active: false)
     respond_to do |format|
@@ -57,8 +45,6 @@ class MenusController < ApplicationController
     end
   end
 
-  # DELETE /menus/1
-  # DELETE /menus/1.json
   def destroy
     @menu.destroy
     respond_to do |format|
@@ -69,12 +55,10 @@ class MenusController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_menu
     @menu = Menu.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def menu_params
     params.require(:menu).permit(:menu_name, :active)
   end

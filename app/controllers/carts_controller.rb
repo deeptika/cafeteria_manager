@@ -1,20 +1,15 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
-  # GET /carts
-  # GET /carts.json
   def index
     @cart = @current_user.carts
     @amount = @cart.map { |item| item.quantity * item.menu_item.menu_item_price }.sum
   end
 
-  # GET /carts/1/edit
   def edit
     cart_item = @current_user.carts.find(params[:id])
   end
 
-  # POST /carts
-  # POST /carts.json
   def create
     cart = Cart.find_by(user_id: params[:user_id],
                         menu_item_id: params[:menu_item_id])
@@ -35,8 +30,6 @@ class CartsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /carts/1
-  # PATCH/PUT /carts/1.json
   def update
     respond_to do |format|
       if @current_user.carts.find(params[:id])
@@ -65,12 +58,10 @@ class CartsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_cart
     @cart = Cart.find_by(id: params[:id], user_id: @current_user.id)
   end
 
-  # Only allow a list of trusted parameters through.
   def cart_params
     params.require(:cart).permit(:user_id, :menu_item_id, :quantity, :menu_id)
   end

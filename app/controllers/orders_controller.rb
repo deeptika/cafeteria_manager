@@ -3,8 +3,6 @@ class OrdersController < ApplicationController
   before_action :ensure_owner_or_clerk, only: [:index, :update, :edit]
   before_action :ensure_owner, only: [:report]
 
-  # GET /orders
-  # GET /orders.json
   def index
     @orders = Order.pending_order.order(date: :desc)
     @your_order = false
@@ -43,7 +41,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /orders/new
   def new
     if Menu.active
       current_menu_id = Menu.active
@@ -51,7 +48,6 @@ class OrdersController < ApplicationController
     @menu_items = MenuItem.current_menu(current_menu_id)
   end
 
-  # GET /orders/1/edit
   def edit
     @status = @order.status == "preparing"
   end
@@ -60,19 +56,14 @@ class OrdersController < ApplicationController
     redirect_to carts_path
   end
 
-  # POST /orders
-  # POST /orders.json
   def create
     items = @current_user.carts
-    type = "walk in"
-    type = "Online" if @current_user.is_customer(@current_user.id)
     if items.count > 0
       new_order = Order.create!(
         user_id: @current_user.id,
         date: Time.now.getutc,
         delivered_at: nil,
         status: "confirm",
-        order_type: type,
       )
     end
 
@@ -95,8 +86,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /orders/1
-  # PATCH/PUT /orders/1.json
   def update
     @order.update(status: params[:status])
     @order.save
@@ -111,12 +100,10 @@ class OrdersController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_order
     @order = Order.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def order_params
     params.require(:order).permit(:user_id, :date, :delivered_at, :status)
   end

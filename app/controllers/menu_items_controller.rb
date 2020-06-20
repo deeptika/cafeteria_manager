@@ -3,37 +3,26 @@ class MenuItemsController < ApplicationController
   before_action :ensure_owner
   skip_before_action :ensure_owner, only: [:index]
 
-  # GET /menu_items
-  # GET /menu_items.json
   def index
     @menus = Menu.all
-    if Menu.active()
-      @current_menu_id = Menu.active()
-    end
-
+    @current_menu_id = Menu.active()
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
     @menu_items = MenuItem.current_menu(@current_menu_id)
   end
 
-  # GET /menu_items/1
-  # GET /menu_items/1.json
   def show
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
   end
 
-  # GET /menu_items/new
   def new
     @menu_item = MenuItem.new
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
   end
 
-  # GET /menu_items/1/edit
   def edit
     @current_menu_id = params[:current_menu_id] if params[:current_menu_id]
   end
 
-  # POST /menu_items
-  # POST /menu_items.json
   def create
     menu_item = MenuItem.create(
       menu_id: params[:menu_id],
@@ -52,8 +41,6 @@ class MenuItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /menu_items/1
-  # PATCH/PUT /menu_items/1.json
   def update
     menu_id = params[:current_menu_id]
     respond_to do |format|
@@ -71,8 +58,6 @@ class MenuItemsController < ApplicationController
     end
   end
 
-  # DELETE /menu_items/1
-  # DELETE /menu_items/1.json
   def destroy
     @menu_item.destroy
     respond_to do |format|
@@ -87,12 +72,10 @@ class MenuItemsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_menu_item
     @menu_item = MenuItem.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def menu_item_params
     params.require(:menu_item).permit(:menu_id, :menu_item_name, :menu_item_price, :image_url)
   end
