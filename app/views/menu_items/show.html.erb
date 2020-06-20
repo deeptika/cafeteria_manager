@@ -1,9 +1,9 @@
 <section>
-  <p id="notice"><%= notice %></p>
+  <h5 id="notice"><%= params[:notice] %></h5>
 
   <p>
     <strong>Menu:</strong>
-    <%= @menu_item.menu_id %>
+    <%= @menu_item.menu.menu_name %>
   </p>
 
   <p>
@@ -16,6 +16,6 @@
     <%= @menu_item.menu_item_price %>
   </p>
 
-  <%= link_to "Edit", edit_menu_item_path(@menu_item) %> |
-  <%= link_to "Back", menu_items_path %>
+  <%= link_to "Edit", edit_menu_item_path(@menu_item, :current_menu_id => @current_menu_id) %> |
+  <%= link_to "Back", menu_items_path(:current_menu_id => @current_menu_id) %>
 </section>
