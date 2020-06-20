@@ -1,7 +1,6 @@
 <section>
     <h1>New Order</h1>
 
-
     <%= render partial: "display_menu",
                locals: {
                  menu_items: @menu_items,
@@ -9,9 +8,9 @@
 
     <div>
         <%= form_with url: viewcart_path do |form| %>
-            <div>
-                <%= submit_tag "View cart" %>
-            </div>
+        <div>
+            <%= submit_tag "View cart" %>
+        </div>
         <% end %>
     </div>
 </section>

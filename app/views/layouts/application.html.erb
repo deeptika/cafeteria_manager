@@ -22,7 +22,7 @@
         <% end %>
 
         <p> <%= link_to "Menu items ", menu_items_path %> </p>
-        <p> <%= link_to "Order items ", order_items_path %> </p>
+
         <p> <%= link_to "Order ", new_order_path %> </p>
 
         <% if not(@current_user.role == "customer") %>
@@ -30,12 +30,14 @@
         <% end %>
 
         <p> <%= link_to "Your orders", yourorder_path %> </p>
+
         <p> <%= link_to "cart", carts_path %> </p>
 
 
         <% if @current_user.role == "owner" %>
         <p> <%= link_to "Sales report", sales_report_path %> </p>
-          <p> <%= link_to "Manage clerks", clerks_path %> </p>
+
+        <p> <%= link_to "Manage clerks", clerks_path %> </p>
         <% end %>
       </div>
   <% end %>

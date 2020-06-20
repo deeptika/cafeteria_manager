@@ -28,7 +28,6 @@ class MenuItemsController < ApplicationController
       menu_id: params[:menu_id],
       menu_item_name: params[:menu_item_name],
       menu_item_price: params[:menu_item_price],
-      image_url: params[:image_url],
     )
     if menu_item.save
       redirect_to menu_items_path(
