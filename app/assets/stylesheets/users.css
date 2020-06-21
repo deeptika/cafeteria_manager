@@ -22,7 +22,7 @@
   display: flex;
   margin: 50px auto;
   max-width: 450px;
-  border: 1px solid transparent;
+  border: 1px solid antiquewhite;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
   align-items: center;
   border-radius: 10px;

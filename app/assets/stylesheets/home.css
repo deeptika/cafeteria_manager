@@ -27,7 +27,7 @@
   display: flex;
   margin: 50px auto;
   max-width:400px;
-  border: 1px solid transparent;
+  border: 1px solid antiquewhite;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
   align-items: center;
   border-radius: 10px;
@@ -50,7 +50,7 @@
 }
 
 .LoginForm-input1 {
-  margin-left: 80px;
+  margin-left: 81px;
   margin-top: 23px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
@@ -59,7 +59,7 @@
 }
 
 .LoginForm-input2 {
-  margin-left: 39px;
+  margin-left: 34px;
   margin-top: 23px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
