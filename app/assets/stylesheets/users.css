@@ -1,3 +1,95 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.NewUserPage {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+
+.NewUserPage-header {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.NewUserPage-title {
+  font-size: 32px;
+  color: rgb(216, 98, 1);
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.NewUserForm {
+  background-color: white;
+  display: flex;
+  margin: 50px auto;
+  max-width: 450px;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.NewUserForm-field {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+}
+
+.NewUserForm-label {
+  padding-top: 5px;
+  font-size: 25px;
+  color: rgb(104, 102, 101);
+}
+
+.NewUserForm-input1 {
+  margin-top: 23px;
+  margin-left: 50px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.NewUserForm-input2 {
+  margin-top: 23px;
+  margin-left: 50px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.NewUserForm-input3 {
+  margin-top: 23px;
+  margin-left: 108px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.NewUserForm-input4 {
+  margin-top: 23px;
+  margin-left: 61px;
+  height: 25px;
+  border: 1px solid rgb(151, 150, 149);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.NewUserForm-submitButton {
+  margin-left: 30%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  height: 50px;
+  width: 200px;
+  border: 1px solid rgb(216, 98, 1);
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(216, 98, 1),rgb(212, 129, 46));
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}

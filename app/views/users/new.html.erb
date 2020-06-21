@@ -1,38 +1,28 @@
-<section>
-
-    <h1> Welcome new user! </h1>
-
-    <section>
-
+<section class="NewUserPage">
+    <div class="NewUserPage-header">
+        <h1 class="NewUserPage-title">Hi there!</h1>
+        <h1 class="NewUserPage-title">Sign up to continue to your home page!</h1>
+    </div>
+    <section class="NewUserForm">
         <%= form_with url: users_path do |form| %>
-
-            <div>
-                <p>First Name </p>
-                <%= form.text_field :first_name %>
+            <div class="NewUserForm-field">
+                <p class="NewUserForm-label">First Name</p>
+                <%= form.text_field :first_name, class: "NewUserForm-input1" %>
             </div>
-
-            <div>
-                <p class="FormInput-label">Last Name </p>
-                <%= form.text_field :last_name %>
+            <div class="NewUserForm-field">
+                <p class="NewUserForm-label">Last Name</p>
+                <%= form.text_field :last_name, class: "NewUserForm-input2" %>
             </div>
-
-            <div>
-                <p class="FormInput-label">Email </p>
-                <%= form.email_field :email %>
+            <div class="NewUserForm-field">
+                <p class="NewUserForm-label">Email</p>
+                <%= form.email_field :email, class: "NewUserForm-input3" %>
             </div>
-
-            <div>
-                <p class="FormInput-label">Password </p>
-                <%= form.password_field :password %>
+            <div class="NewUserForm-field">
+                <p class="NewUserForm-label">Password</p>
+                <%= form.password_field :password, class: "NewUserForm-input4" %>
             </div>
-
-            <div>
-                <%= form.submit "Sign-Up!" %>
-            </div>
-
+            <%= form.submit "Sign up", class: "NewUserForm-submitButton" %>
             <%= hidden_field_tag "role", "customer" %>
-
         <% end %>
-
     </section>
-<section>
+</section>
