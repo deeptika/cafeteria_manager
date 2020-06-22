@@ -1,27 +1,25 @@
 <section>
-  <h1> New Menu Item </h1>
-
-    <section>
+  <h1 class="NewMenuItemPage-title"> New Menu Item </h1>
+  <section class="MenuItemForm">
       <%= form_with url: menu_items_path do |form| %>
 
-        <div>
-          <p>Menu Item Name</p>
-          <%= form.text_field :menu_item_name, class: "Form-input" %>
+        <div class="MenuItemForm-field">
+          <p class="MenuItemForm-label">Menu Item Name</p>
+          <%= form.text_field :menu_item_name, class: "MenuItemForm-input1" %>
         </div>
 
-        <div>
-          <p>Menu Item Price </p>
-          <%= form.text_field :menu_item_price, class: "Form-input" %>
+        <div class="MenuItemForm-field">
+          <p class="MenuItemForm-label">Menu Item Price </p>
+          <%= form.text_field :menu_item_price, class: "MenuItemForm-input2" %>
         </div>
 
-        <div>
-          <%= form.submit "Add Item ", class: "Form-submit" %>
-        </div>
+        <%= form.submit "I'm done", class: "MenuItemForm-submitButton" %>
 
         <%= hidden_field_tag "menu_id", @current_menu_id %>
 
       <% end %>
-    </section>
-
-  <%= link_to "Back", menu_items_path(:current_menu_id => @current_menu_id) %>
-<section>
+  </section>
+  <p class="MenuItemPage-link">
+    <%= link_to "Back", menu_items_path(:current_menu_id => @current_menu_id) %>
+  </p>
+</section>

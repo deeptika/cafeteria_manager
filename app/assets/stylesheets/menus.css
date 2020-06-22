@@ -63,11 +63,12 @@
   font-size: 20px;
   color: rgb(77, 76, 75);
 }
+
 /* styling for links */
 
 .MenuPage-link {
+  text-align: center;
   margin-top: 150px;
-  margin-left: 350px;
   font-size: 20px;
   font-weight: 400;
   font-style: italic;

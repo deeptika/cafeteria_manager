@@ -16,10 +16,10 @@
       <p class="Menu-options">
         [<%= link_to "Show", menu %>]
         [<%= link_to "Edit", edit_menu_path(menu) %>]
-        [<%= link_to "Destroy", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
+        [<%= link_to "Remove", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
       </p>
     </div>
   <% end %>
 
-  <%= link_to "+Add Menu", new_menu_path, class: "MenuPage-link" %>
+  <%= link_to "+ Add Menu", new_menu_path, class: "MenuPage-link" %>
 </section>

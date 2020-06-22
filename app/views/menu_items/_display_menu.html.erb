@@ -1,16 +1,16 @@
-<section>
+<section class="ShowMenuItemPage">
   <% @menu_items.each do |menu_item| %>
-    <div>
-      <p> <%= menu_item.menu_item_name %> </p>
-      <div>
-        <p>  ₹ <%= menu_item.menu_item_price %> </p>
-          <% if @current_user.is_owner(@current_user.id) %>
-            <div>
-              <%= link_to "Edit", edit_menu_item_path(menu_item, :current_menu_id => @current_menu_id) %>
-              <%= link_to "Remove", menu_item_path(menu_item, :current_menu_id => @current_menu_id), method: :delete, data: { confirm: "Are you sure?" } %>
-            </div>
-        <% end %>
+    <div class="ShowMenuItem">
+      <div class="ShowMenuItemPage-mainDetails">
+        <p class="ShowMenuItemPage-menuItemName"> <%= menu_item.menu_item_name %> </p>
+        <p class="ShowMenuItemPage-price">₹ <%= menu_item.menu_item_price %> </p>
       </div>
+      <% if @current_user.is_owner(@current_user.id) %>
+        <p class="ShowMenuItemPage-options">
+          [<%= link_to "Edit", edit_menu_item_path(menu_item, :current_menu_id => @current_menu_id) %>]
+          [<%= link_to "Remove", menu_item_path(menu_item, :current_menu_id => @current_menu_id), method: :delete, data: { confirm: "Are you sure?" } %>]
+        </p>
+      <% end %>
     </div>
   <% end %>
 </section>

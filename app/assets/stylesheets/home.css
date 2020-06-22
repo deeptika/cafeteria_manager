@@ -81,7 +81,7 @@
   font-size: 20px;
 }
 
-.MainPage {
+/*.MainPage {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   position: relative;
@@ -147,7 +147,7 @@
   color: rgb(216, 98, 1);
   letter-spacing: 0.5px;
   margin-bottom: 30px;
-}
+}*/
 
 .HomePage-message {
   font-family: Arial, Helvetica, sans-serif;

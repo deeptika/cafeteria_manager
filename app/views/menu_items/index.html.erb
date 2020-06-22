@@ -1,26 +1,26 @@
-<section>
+<section class="MenuItemPage">
 
-    <h3 id="notice"><%= params[:notice] %></h3>
+    <h3 class="MenuItemPage-notice"><%= params[:notice] %></h3>
 
-    <% if @current_user.is_owner(@current_user.id) %>
-      <div>
-        <h3> Select Menu </h3>
-        <%= render partial: "select_menu",
-                   locals: {
-                     menu_id: @current_menu_id,
-                     menus: @menus,
-                   } %>
-      </div>
-    <% end %>
-
-    <h1>Menu Items</h1>
-
-    <div>
+    <div class="MenuItemPage-selectMenus">
       <% if @current_user.is_owner(@current_user.id) %>
-        <%= link_to "+ Add Menu Item",
-                    new_menu_item_path(:current_menu_id => @current_menu_id) %>
+          <p class="MenuItemPage-title1">Here are the menus we have:</p>
+          <%= render partial: "select_menu",
+                     locals: {
+                       menu_id: @current_menu_id,
+                       menus: @menus,
+                     } %>
       <% end %>
     </div>
+
+    <div class="MenuItemPage-header">
+      <h1 class="MenuItemPage-title2">Menu Items</h1>
+      <% if @current_user.is_owner(@current_user.id) %>
+      <%= link_to "+ Add Menu Item",
+                  new_menu_item_path(:current_menu_id => @current_menu_id) %>
+      <% end %>
+    </div>
+
 
     <%= render partial: "display_menu",
                locals: {
