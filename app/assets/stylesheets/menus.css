@@ -1,8 +1,20 @@
-.MenuPage {
+/* styling for index.html.erb */
+.MenuPage, .NewMenuPage, .ShowMenuPage, .EditMenuPage {
   max-width: 1000px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
+  text-align: center;
+}
+
+.MenuPage-notice {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(194, 110, 15);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .MenuPage-title {
@@ -11,4 +23,167 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   text-align: center;
+}
+
+.Menu {
+  margin-left: 30%;
+  max-width: 700px;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Menu-mainDetails {
+  display: flex;
+}
+
+.Menu-title {
+  margin-left: 50px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+}
+
+.Menu-active {
+  margin-left: 400px;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+  color: rgb(3, 87, 3);
+}
+
+.Menu-notActive {
+  margin-left: 400px;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+  color: rgb(246, 18, 18);
+}
+
+.Menu-options {
+  margin-left: 50px;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+}
+/* styling for links */
+
+.MenuPage-link {
+  margin-top: 150px;
+  margin-left: 350px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* styling for new.html.erb and edit.html.erb*/
+
+.NewMenuPage-title, .EditMenuPage-title {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+}
+
+/* styling for show.html.erb */
+
+.ShowMenuPage-notice {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(3, 87, 3);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ShowMenu {
+  margin-left: 40%;
+  margin-top: 50px;
+  max-width: 500px;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.ShowMenuPage-menuName {
+  font-size: 36px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+}
+
+.ShowMenuPage-menuActive {
+  font-size: 26px;
+  letter-spacing: -1px;
+  color: rgb(77, 76, 75);
+  text-align: center;
+}
+
+/* styling for _form.html.erb */
+
+.MenuForm-errorExplanation {
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.MenuForm-errorMessage {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(246, 18, 18);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.MenuForm {
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.MenuForm-field {
+  margin-left: 70px;
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+}
+
+.MenuForm-label {
+  font-size: 20px;
+  color: rgb(104, 102, 101);
+}
+
+.MenuForm-input1 {
+  margin-left: 30px;
+  height: 25px;
+  border: 1px solid rgb(202, 200, 198);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.MenuForm-input2 {
+  margin-top: 3px;
+  margin-left: 10px;
+  border: 1px solid rgb(151, 150, 149);
+  background-color: white;
+}
+
+.MenuForm-submitButton {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 40%;
+  height: 50px;
+  border: 1px solid rgb(216, 98, 1);
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(216, 98, 1),rgb(212, 129, 46));
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
 }

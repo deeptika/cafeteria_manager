@@ -1,7 +1,7 @@
 <%= form_with(model: menu, local: true) do |form| %>
   <% if menu.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+    <div class="MenuForm-errorExplanation">
+      <h2 class="MenuForm-errorMessage"><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
         <% menu.errors.full_messages.each do |message| %>
@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :menu_name %>
-    <%= form.text_field :menu_name %>
-  </div>
+  <section class="MenuForm">
+    <div class="MenuForm-field">
+      <%= form.label :menu_name, class: "MenuForm-label" %>
+      <%= form.text_field :menu_name, class: "MenuForm-input1" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="MenuForm-field">
+      <p class="MenuForm-label">Would you like this menu to be active?</p>
+      <%= form.check_box :active, class: "MenuForm-input2" %>
+    </div>
+    <%= form.submit "I'm done", class: "MenuForm-submitButton" %>
+  </section>
 <% end %>

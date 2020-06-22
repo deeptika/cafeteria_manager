@@ -1,8 +1,7 @@
-<section>
-  <h1>Editing Menu</h1>
+<section class="EditMenuPage">
+  <h1 class="EditMenuPage-title">Edit Menu</h1>
 
   <%= render "form", menu: @menu %>
 
-  <%= link_to "Show", @menu %> |
-  <%= link_to "Back", menus_path %>
+  <p class="MenuPage-link"><%= link_to "Show", @menu %> | <%= link_to "Back", menus_path %></p>
 </section>
