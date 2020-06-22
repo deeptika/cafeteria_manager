@@ -1,6 +1,8 @@
-<%= form_with url: menu_items_path, method: "GET" do |form| %>
-  <%= select_tag "current_menu_id",
-                 options_from_collection_for_select(menus, "id", "menu_name", menu_id),
-                 class: "MenuItem-list",
-                 :onchange => "submit()" %>
-<% end %>
+<section class="MenuItem-selectMenu">
+  <%= form_with url: menu_items_path, method: "GET" do |form| %>
+    <%= select_tag "current_menu_id",
+                   options_from_collection_for_select(menus, "id", "menu_name", menu_id),
+                   class: "MenuItem-list",
+                   :onchange => "submit()" %>
+  <% end %>
+</section>

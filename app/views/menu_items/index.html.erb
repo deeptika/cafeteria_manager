@@ -16,11 +16,12 @@
     <div class="MenuItemPage-header">
       <h1 class="MenuItemPage-title2">Menu Items</h1>
       <% if @current_user.is_owner(@current_user.id) %>
-      <%= link_to "+ Add Menu Item",
-                  new_menu_item_path(:current_menu_id => @current_menu_id) %>
-      <% end %>
+      <p class="MenuItemPage-addMenuItemLink">
+        <%= link_to "+ Add Menu Item",
+                    new_menu_item_path(:current_menu_id => @current_menu_id) %>
+        <% end %>
+      </p>
     </div>
-
 
     <%= render partial: "display_menu",
                locals: {

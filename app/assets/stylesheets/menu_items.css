@@ -7,24 +7,38 @@
   align-items: center;
 }
 
+.MenuItemPage-header, .MenuItemPage-selectMenus, .ShowMenuItemPage-mainDetails {
+  display: flex;
+}
+
 .MenuItemPage-title1 {
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 25px;
   color: rgb(77, 76, 75);
   text-align: center;
   margin-left: 200px;
 }
 
+.MenuItem-selectMenu {
+  margin-top: 45px;
+  margin-left: 250px;
+}
+
 .MenuItemPage-title2 {
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 32px;
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   text-align: center;
+  margin-left: 200px;
 }
 
-.MenuItemPage-header, .MenuItemPage-selectMenus, .ShowMenuItemPage-mainDetails {
-  display: flex;
+.MenuItemPage-addMenuItemLink {
+  margin-top: 50px;
+  margin-left: 380px;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
 }
 
 /* styling for links */
@@ -101,8 +115,8 @@
 .ShowMenuItemPage-menuName {
   font-size: 26px;
   letter-spacing: -1px;
-  color: rgb(77, 76, 75);
-  text-align: center;
+  color: rgb(216, 98, 1);
+  margin-left: 50px;
 }
 
 
