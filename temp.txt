@@ -1,0 +1,17 @@
+<p><%= link_to "Home", home_path %></p>
+          <% if @current_user.role == "owner" %>
+            <p><%= link_to "View menus", menus_path %> </p>
+          <% end %>
+          <p><%= link_to "Browse", menu_items_path %> </p>
+          <p><%= link_to "Order", new_order_path %> </p>
+          <% if not(@current_user.role == "customer") %>
+            <p><%= link_to "Pending Orders", orders_path %> </p>
+          <% end %>
+          <p><%= link_to "My orders", yourorder_path %></p>
+          <p><%= link_to "My cart", carts_path %></p>
+          <% if @current_user.role == "owner" %>
+            <p><%= link_to "View sales report", sales_report_path %></p>
+            <p><%= link_to "Manage clerks", clerks_path %></p>
+          <% end %>
+          <p><%= link_to "Sign out", destroy_session_path, method: "delete" %></p>
+        

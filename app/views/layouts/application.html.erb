@@ -10,43 +10,41 @@
   </head>
 
   <body>
-  <% if @current_user %>
-    <p>
-      Welcome <%= @current_user.first_name %> <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
-    </p>
-    <div>
-        <p> <%= link_to "Home ", home_path %> </p>
-
-        <% if @current_user.role == "owner" %>
-          <p> <%= link_to "Menu", menus_path %> </p>
-        <% end %>
-
-        <p> <%= link_to "Menu items ", menu_items_path %> </p>
-
-        <p> <%= link_to "Order ", new_order_path %> </p>
-
-        <% if not(@current_user.role == "customer") %>
-          <p> <%= link_to "Pending Orders", orders_path %> </p>
-        <% end %>
-
-        <p> <%= link_to "Your orders", yourorder_path %> </p>
-
-        <p> <%= link_to "cart", carts_path %> </p>
-
-
-        <% if @current_user.role == "owner" %>
-        <p> <%= link_to "Sales report", sales_report_path %> </p>
-
-        <p> <%= link_to "Manage clerks", clerks_path %> </p>
-        <% end %>
+    <% if @current_user %>
+      <div class="MainPage">
+        <div class="SideNavBar">
+          <h3 class="SideNavBar-header">MENU</h3>
+          <p class="SideNavBar-item"><%= link_to "Home", home_path, class: "SideNavItem-link" %></p>
+          <% if @current_user.role == "owner" %>
+            <p class="SideNavBar-item"><%= link_to "View menus", menus_path, class: "SideNavItem-link" %> </p>
+          <% end %>
+          <p class="SideNavBar-item"><%= link_to "Browse", menu_items_path, class: "SideNavItem-link" %> </p>
+          <p class="SideNavBar-item"><%= link_to "Order", new_order_path, class: "SideNavItem-link" %> </p>
+          <% if not(@current_user.role == "customer") %>
+            <p class="SideNavBar-item"><%= link_to "Pending Orders", orders_path, class: "SideNavItem-link" %> </p>
+          <% end %>
+          <p class="SideNavBar-item"><%= link_to "My orders", yourorder_path, class: "SideNavItem-link" %></p>
+          <p class="SideNavBar-item"><%= link_to "My cart", carts_path, class: "SideNavItem-link" %></p>
+          <% if @current_user.role == "owner" %>
+            <p class="SideNavBar-item"><%= link_to "View sales report", sales_report_path, class: "SideNavItem-link" %></p>
+            <p class="SideNavBar-item"><%= link_to "Manage clerks", clerks_path, class: "SideNavItem-link" %></p>
+          <% end %>
+          <p class="SideNavBar-item"><%= link_to "Sign out", destroy_session_path, method: "delete", class: "SideNavItem-link" %></p>
+        </div>
+        <div class="MainPage-header">
+          <p class="MainPage-headerAppName">The Cafeteria Manager</p>
+          <p class="MainPage-headerWelcomeMessage">
+            Hi <%= @current_user.first_name + " " + @current_user.last_name %>!
+          </p>
+          <% if not(@current_user.role == "customer") %>
+            <p class="MainPage-ownerMessage">You have been registered as a cafeteria owner.</p>
+          <% end %>
+        </div>
       </div>
-  <% end %>
-
-  <% if flash[:error] %>
-    <p class="User-error Login-page">
-      <%= flash[:error] %>
-    </p>
-  <% end %>
+    <% end %>
+    <% if flash[:error] %>
+      <p><%= flash[:error] %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
