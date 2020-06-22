@@ -80,3 +80,82 @@
   padding-right: 10px;
   font-size: 20px;
 }
+
+/*.MainPage {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  position: relative;
+}
+
+.SideNavBar {
+  width: 250px;
+  height: 100%;
+  padding: 30px 0px;
+  position: fixed;
+  background-image: linear-gradient(rgb(182, 177, 177),rgb(204, 199, 199));
+  border: 1px solid whitesmoke;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.SideNavBar-header {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.SideNavBar-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.SideNavItem-link {
+  font-size: 20px;
+  color: rgb(104, 102, 101);
+  display: block;
+}
+
+.SideNavBar-item:hover {
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+.MainPage-header {
+  margin-left: 280px;
+  border-bottom: 2px solid rgb(177, 174, 174);
+  width: 100%;
+}
+
+.MainPage-headerAppName {
+  font-size: 48px;
+  color: rgb(216, 98, 1);
+  letter-spacing: -1px;
+}
+
+.MainPage-headerWelcomeMessage {
+  font-size: 36px;
+  color: rgb(216, 98, 1);
+  letter-spacing: -1px;
+}
+
+.MainPage-ownerMessage {
+  font-size: 17px;
+  font-style: italic;
+  color: rgb(216, 98, 1);
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
+}*/
+
+.HomePage-message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 10;
+  margin-top: 100px;
+  margin-left: 280px;
+  text-align: center;
+  color: rgb(216, 98, 1);
+  letter-spacing: 0.8px;
+}

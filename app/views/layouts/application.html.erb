@@ -36,8 +36,11 @@
           <p class="MainPage-headerWelcomeMessage">
             Hi <%= @current_user.first_name + " " + @current_user.last_name %>!
           </p>
-          <% if not(@current_user.role == "customer") %>
+          <% if (@current_user.role == "owner") %>
             <p class="MainPage-ownerMessage">You have been registered as a cafeteria owner.</p>
+          <% end %>
+          <% if (@current_user.role == "clerk") %>
+            <p class="MainPage-ownerMessage">You have been registered as a cafeteria clerk.</p>
           <% end %>
         </div>
       </div>

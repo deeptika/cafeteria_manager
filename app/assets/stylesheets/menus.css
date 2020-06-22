@@ -1,3 +1,14 @@
-// Place all the styles related to the Menus controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.MenuPage {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+
+.MenuPage-title {
+  margin-top: 100px;
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+}
