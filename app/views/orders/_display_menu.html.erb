@@ -1,10 +1,10 @@
 <section class="DisplayMenu">
-    <% @menu_items.each do |menu_item| %>
-        <table class="DisplayMenu-table">
+    <table class="DisplayMenu-table">
+        <% @menu_items.each do |menu_item| %>
             <tr class="DisplayMenu-details">
                 <td class="DisplayMenu-itemName"> <%= menu_item.menu_item_name %> </p>
                 <td class="DisplayMenu-itemPrice">₹ <%= menu_item.menu_item_price %> </p>
-                <td style="padding-right: 50px">
+                <td>
                     <%= form_with url: carts_path do |form| %>
                                     <%= hidden_field_tag "menu_item_id", menu_item.id %>
                                     <%= hidden_field_tag "menu_id", menu_item.menu_id %>
@@ -16,6 +16,6 @@
                     <% end %>
                 </td>
             </tr>
-        </table>
-    <% end %>
+            <% end %>
+    </table>
 </section>
