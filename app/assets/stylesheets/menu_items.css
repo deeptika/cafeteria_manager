@@ -5,10 +5,13 @@
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
+  text-align: center;
+  margin-bottom: 500px;
 }
 
 .MenuItemPage-header, .MenuItemPage-selectMenus, .ShowMenuItemPage-mainDetails {
   display: flex;
+  margin-bottom: 50px;
 }
 
 .MenuItemPage-title1 {
@@ -82,7 +85,7 @@
   color: rgb(3, 87, 3);
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .ShowMenuItem {
@@ -110,6 +113,7 @@
   margin-left: 50px;
   font-size: 20px;
   color: rgb(77, 76, 75);
+  margin-bottom: 30px;
 }
 
 .ShowMenuItemPage-menuName {
@@ -117,6 +121,7 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 
@@ -135,7 +140,7 @@
   color: rgb(246, 18, 18);
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .MenuItemForm {
@@ -149,7 +154,7 @@
 }
 
 .MenuItemForm-field {
-  margin: 20px 0 30px 50px;
+  margin: 20px 0 50px 50px;
   align-items: center;
   display: flex;
 }

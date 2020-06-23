@@ -5,6 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
   text-align: center;
+  margin-top: 500px;
 }
 
 .MenuPage-notice {
@@ -23,7 +24,7 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   text-align: center;
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .Menu {
@@ -114,6 +115,7 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .ShowMenuPage-menuActive {
@@ -121,6 +123,7 @@
   letter-spacing: -1px;
   color: rgb(77, 76, 75);
   text-align: center;
+  margin-bottom: 30px;
 }
 
 /* styling for _form.html.erb */
@@ -153,7 +156,7 @@
 
 .MenuForm-field {
   margin-left: 70px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
   align-items: center;
   display: flex;
@@ -180,9 +183,9 @@
 }
 
 .MenuForm-submitButton {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 50px;
-  margin-left: 40%;
+  align-items: center;
   height: 50px;
   border: 1px solid rgb(216, 98, 1);
   border-radius: 10px;
