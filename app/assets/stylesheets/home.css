@@ -52,7 +52,6 @@
 
 .LoginForm-input1 {
   margin-left: 81px;
-  /*margin-top: 23px;*/
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
   border-radius: 4px;
@@ -61,7 +60,6 @@
 
 .LoginForm-input2 {
   margin-left: 34px;
-  /*margin-top: 23px;*/
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
   border-radius: 4px;
@@ -134,12 +132,14 @@
   font-size: 48px;
   color: rgb(216, 98, 1);
   letter-spacing: -1px;
+  padding-bottom: 30px;
 }
 
 .MainPage-headerWelcomeMessage {
   font-size: 36px;
   color: rgb(216, 98, 1);
   letter-spacing: -1px;
+  padding-bottom: 30px;
 }
 
 .MainPage-ownerMessage {
@@ -155,7 +155,6 @@
   font-size: 36px;
   font-weight: 10;
   margin-top: 100px;
-  margin-left: 280px;
   text-align: center;
   color: rgb(216, 98, 1);
   letter-spacing: 0.8px;
