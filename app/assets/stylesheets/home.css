@@ -123,6 +123,7 @@
 }
 
 .MainPage-header {
+  margin-top: 80px;
   margin-bottom: 50px;
   margin-left: 280px;
   border-bottom: 2px solid rgb(177, 174, 174);

@@ -1,5 +1,6 @@
-<section>
-    <h1>New Order</h1>
+<section class="NewOrderPage">
+    <h1 class="NewOrderPage-title">New Order</h1>
+    <p class="NewOrderPage-message">Orders taken for the menu currently active now</p>
 
     <%= render partial: "display_menu",
                locals: {
@@ -9,7 +10,7 @@
     <div>
         <%= form_with url: viewcart_path do |form| %>
         <div>
-            <%= submit_tag "View cart" %>
+            <%= submit_tag "View cart", class: "NewOrderPage-submitButton" %>
         </div>
         <% end %>
     </div>

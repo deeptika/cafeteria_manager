@@ -1,3 +1,94 @@
-// Place all the styles related to the Orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* styling for new.html.erb */
+
+.NewOrderPage {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+  margin-top: 500px;
+  margin-left: 250px;
+}
+
+.NewOrderPage-title {
+  margin-top: 350px;
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+  margin-left: 145px;
+  margin-bottom: 80px;
+}
+
+.NewOrderPage-message {
+  margin-top: 50px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: rgb(77, 76, 75);
+  text-align: center;
+  margin-left: 145px;
+  margin-bottom: 50px;
+}
+
+/* styling for _display_menu.html.erb */
+
+ .DisplayMenu {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-left: 145px;
+ }
+
+ .DisplayMenu-table {
+  width: 750px;
+  height: 100px;
+  margin-top: 0 auto;
+  margin-left: 420px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+ }
+
+ .DisplayMenu-details {
+   align-items: center;
+ }
+
+ .DisplayMenu-itemName {
+  padding: 50px;
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  border: 1px solid transparent;
+  text-align: center;
+ }
+
+ .DisplayMenu-itemPrice {
+  padding: 50px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: rgb(77, 76, 75);
+  border: 1px solid transparent;
+  text-align: center;
+ }
+
+ .NewOrderPage-submitButton {
+  margin-top: 75px;
+  margin-bottom: 50px;
+  margin-left: 51%;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  border: 1px solid rgb(216, 98, 1);
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(216, 98, 1),rgb(212, 129, 46));
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
