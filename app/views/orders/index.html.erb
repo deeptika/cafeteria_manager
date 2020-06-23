@@ -1,42 +1,42 @@
-<section>
-  <h4 id="notice"> <%= params[:notice] %> </h4>
+<section class="YourOrders">
+  <h4 class="YourOrders-notice"> <%= params[:notice] %> </h4>
   <% order_title = "Pending Orders" %>
   <% order_title = "Your Orders" if @your_order %>
-  <h1 class="Order-title"> <%= order_title %> </h1>
+  <h1 class="YourOrders-title"> <%= order_title %> </h1>
 
-  <p class="OrderNew"> <%= link_to "New Order", new_order_path %> <p>
+  <p class="YourOrders-link"> <%= link_to "New Order", new_order_path %> <p>
 
-  <table class="Table">
-    <thead>
-      <tr>
-        <% if not @your_order %>
-          <th>Order Id</th>
-        <% end %>
-        <% if not @your_order %>
-          <th>User</th>
-        <% end %>
-        <th>Date</th>
-        <th>Delivered at</th>
-        <th>Status</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <table class="YourOrders-table">
+    <tr class="YourTable-tableHeader">
+      <% if not @your_order %> <th class="YourTable-headerValue">Order Id</th> <% end %>
+      <% if not @your_order %> <th class="YourTable-headerValue">User</th> <% end %>
+      <th class="YourTable-headerValue">Date</th>
+      <th class="YourTable-headerValue">Delivered at</th>
+      <th class="YourTable-headerValue">Status</th>
+      <th colspan="2"></th>
+    </tr>
 
     <tbody>
       <% @orders.each do |order| %>
         <tr>
           <% if not @your_order %>
-            <td> <%= order.id %> </td>
+            <td class="YourTable-value"> <%= order.id %> </td>
           <% end %>
           <% if not @your_order %>
-            <td> <%= order.user.first_name %> </td>
+            <td> <p class="YourTable-value"><%= order.user.first_name %></p> </td>
           <% end %>
-          <td> <%= order.date %> </td>
-          <td> <%= order.delivered_at %> </td>
-          <td> <%= order.status %> </td>
-          <td> <%= link_to "Show", order_items_path(order_id: order.id) %> </td>
+          <td class="YourTable-value"> <%= order.date %> </td>
+          <td class="YourTable-value">
+            <% if order.delivered_at == nil %>
+              <p class="YourTable-value">--NIL--</p>
+            <% else %>
+              <%= order.delivered_at %>
+            <% end %>
+          </td>
+          <td class="YourTable-value"> <%= order.status %> </td>
+          <td class="YourTable-value"> <%= link_to "Show", order_items_path(order_id: order.id) %> </td>
           <% if (not(@current_user.is_customer(@current_user.id))) and not @your_order %>
-            <td> <%= link_to "Edit", edit_order_path(order) %> </td>
+            <td class="YourTable-value"> <%= link_to "Edit", edit_order_path(order) %> </td>
           <% end %>
         </tr>
       <% end %>
