@@ -1,18 +1,9 @@
 <section class="Cart">
-  <h3 id="notice"> <%= notice %> </h3>
+  <h3 class="Cart-notice"> <%= notice %> </h3>
 
-  <h1>Cart</h1>
+  <h1 class="Cart-title">Cart</h1>
 
-  <table class="Table">
-    <thead>
-      <tr>
-        <th>Menu Item</th>
-        <th>price</th>
-        <th>Quantity</th>
-        <th colspan=2>Options</th>
-      </tr>
-    </thead>
-
+  <table class="Cart-table">
     <tbody>
       <% @cart.each do |cart| %>
         <tr>

@@ -1,3 +1,36 @@
-// Place all the styles related to the Carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.Cart {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+.Cart-notice {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(194, 110, 15);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.Cart-title {
+  margin-top: 100px;
+  font-size: 32px;
+  color: rgb(216, 98, 1);
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.Cart-table {
+  width: 750px;
+  height: 100px;
+  margin-top: 0 auto;
+  margin-left: 170px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
