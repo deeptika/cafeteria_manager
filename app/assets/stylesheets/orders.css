@@ -90,7 +90,7 @@
   margin-top: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
-  margin-left: 400px;
+  margin-left: 300px;
   width: 100%;
   max-width: 1000px;
  }
@@ -111,7 +111,7 @@
   color: rgb(216, 98, 1);
   margin-bottom: 80px;
   text-align: left;
-  margin-left: 400px;
+  margin-left: 300px;
 }
 
 .YourOrders-link {
@@ -120,7 +120,7 @@
   color: rgb(77, 76, 75);
   padding-bottom: 50px;
   text-align: left;
-  margin-left: 400px;
+  margin-left: 300px;
 }
 
 .YourTable-tableHeader {
