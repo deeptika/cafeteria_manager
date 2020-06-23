@@ -1,49 +1,50 @@
-<section>
-  <p id="notice"> <%= params[:notice] %> </p>
+<section class="Report">
+  <p class="Report-notice"> <%= params[:notice] %> </p>
 
-  <h1>Sales report</h1>
+  <h1 class="Report-title">Sales report</h1>
 
   <%= form_with url: sales_report_path, method: "GET", local: true do |form| %>
-    <section>
-      <p> From </p>
-      <%= date_field_tag "from_date", @from_date %>
-      <p> To </p>
-      <%= date_field_tag "to_date", @to_date %>
+    <section class="Report-form">
+      <div class="Report-duration">
+        <p class="Report-label"> From </p>
+        <%= date_field_tag "from_date", @from_date %>
+        <p class="Report-label"> To </p>
+        <%= date_field_tag "to_date", @to_date %>
+      </div>
       <%= text_field_tag "user_id", nil, value: params[:user_id],
-                                         placeholder: "User Id or name (optional)",
-                                         class: "Search-label" %>
+                                         placeholder: "User ID/name (optional)" %>
 
-      <%= submit_tag "Get" %>
+      <%= submit_tag "Generate report", class: "Report-submitButton" %>
     </section>
   <% end %>
 
-  <table class="table">
+  <table class="Report-table">
     <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Delivered at</th>
-        <th>Amount</th>
-        <th>Details</th>
+      <tr class="Report-tableHeader">
+        <th class="Report-headerValue">User</th>
+        <th class="Report-headerValue">Date</th>
+        <th class="Report-headerValue">Delivered at</th>
+        <th class="Report-headerValue">Amount</th>
+        <th class="Report-headerValue">Details</th>
       </tr>
     </thead>
 
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= order.user.first_name %> </td>
-          <td> <%= order.date %> </td>
-          <td> <%= order.delivered_at %> </td>
-          <td> <%= @totals[order.id] %> </td>
-          <td> <%= link_to "Show", order_items_path(order_id: order.id) %> </td>
+          <td class="Report-value"> <%= order.user.first_name %> </td>
+          <td class="Report-value"> <%= order.date %> </td>
+          <td class="Report-value"> <%= order.delivered_at %> </td>
+          <td class="Report-value"> <%= @totals[order.id] %> </td>
+          <td class="Report-value"> <%= link_to "Show", order_items_path(order_id: order.id) %> </td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <br>
 
-  <section>
-    <p> Total Orders : <%= @count %> </p>
-    <p> Total Amount : <%= @sum %> </p>
-  </section>
+  <div class="Report-total">
+    <p class="Report-totalValue"> Total Orders: <%= @count %> </p>
+    <p class="Report-totalValue"> Total Amount: <%= @sum %> </p>
+  </div>
 </section>
