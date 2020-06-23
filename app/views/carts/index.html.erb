@@ -7,24 +7,24 @@
     <tbody>
       <% @cart.each do |cart| %>
         <tr>
-          <td> <%= cart.menu_item.menu_item_name %> </td>
-          <td> <%= cart.menu_item.menu_item_price %> </td>
-          <td> <%= cart.quantity %> </td>
-          <td> <%= link_to "Edit", edit_cart_path(cart) %> </td>
-          <td> <%= link_to "Remove", cart, method: :delete, data: { confirm: "Are you sure?" } %> </td>
+          <td class="Cart-itemName"> <%= cart.menu_item.menu_item_name %> </td>
+          <td class="Cart-price"> <%= cart.menu_item.menu_item_price %> </td>
+          <td class="Cart-quantity"> <%= cart.quantity %> item/s </td>
+          <td class="Cart-options"> [ <%= link_to "Remove", cart, method: :delete, data: { confirm: "Are you sure?" }, class: "Cart-link" %> ] </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <h2 > Total Amount = <%= @amount %> </h2>
+  <h2 class="Cart-total">Total = <%= @amount %> </h2>
+  <p class="Cart-message">Click to place order</p>
 
   <div>
       <%= form_with url: orders_path do |form| %>
           <div class="Form-order">
-              <%= submit_tag "Place Order", class: "Order-submit" %>
+              <%= submit_tag "Place Order", class: "Order-submit", class: "Cart-submitButton" %>
           </div>
       <% end %>
-      <%= link_to "Back", new_order_path %>
+      <%= link_to "Back", new_order_path, class: "Cart-link" %>
   </div>
 </section>
