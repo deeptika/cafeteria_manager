@@ -1,6 +1,6 @@
 /* styling for new.html.erb */
 
-.NewOrderPage, .YourOrders {
+.NewOrderPage, .YourOrders, .EditOrder {
   max-width: 1000px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
@@ -140,4 +140,68 @@
   font-size: 20px;
   padding: 15px;
   color: rgb(77, 76, 75);
+}
+
+
+/* styling for _form.html.erb */
+
+.OrderForm {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.OrderForm-title {
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  text-align: left;
+  padding: 50px;
+}
+
+.Order-div {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 30px;
+  margin-bottom: 50px;
+}
+
+.Order-radio {
+  display: flex;
+  align-items:center;
+}
+
+.Options {
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+}
+
+.Order-submitButton {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  align-items: center;
+  height: 50px;
+  border: 1px solid rgb(216, 98, 1);
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(216, 98, 1),rgb(212, 129, 46));
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.EditOrder-link {
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+  padding-top: 30px;
 }

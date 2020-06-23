@@ -1,23 +1,20 @@
 <%= form_with(model: order, local: true) do |form| %>
-  <section>
-      <h4> Status <h4>
-          <div>
-              <%= radio_button_tag "status", "confirm", !(@status) %>
-              <p> Confirmed </p>
-          </div>
-          <div>
-              <%= radio_button_tag "status", "preparing", @status %>
-              <p> On your way </p>
-          </div>
-          <div>
-              <%= radio_button_tag "status", "delivered" %>
-              <p class="Order-status"> Delivered </p>
-          </div>
-          <div>
-
-          <div>
-              <%= submit_tag "Update Order", class: "Order-submit" %>
-          </div>
-
-  </section>
+    <section class="OrderForm">
+    <h4 class="OrderForm-title"> Status <h4>
+    <div class="Order-div">
+        <div class="Order-radio">
+            <%= radio_button_tag "status", "confirm", !(@status) %>
+            <p class="Options"> Confirmed </p>
+        </div>
+        <div class="Order-radio">
+            <%= radio_button_tag "status", "preparing", @status %>
+            <p class="Options"> On your way </p>
+        </div>
+        <div class="Order-radio">
+            <%= radio_button_tag "status", "delivered" %>
+            <p class="Options"> Delivered </p>
+        </div>
+    </div>
+    <%= submit_tag "Update Order", class: "Order-submitButton" %>
+</section>
 <% end %>

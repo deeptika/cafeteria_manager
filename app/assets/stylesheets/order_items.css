@@ -1,3 +1,62 @@
-// Place all the styles related to the Order_items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* styling for index.html.erb */
+
+.OrderItem {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+.OrderItem-notice {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(194, 110, 15);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.OrderItem-details {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  text-align: left;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Details {
+  font-size: 30px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  padding: 20px;
+  text-align: left;
+}
+
+.Details-total {
+  font-size: 32px;
+  letter-spacing: -1px;
+  color: rgb(3, 87, 3);
+  padding: 25px;
+  text-align: center;
+}
+
+.Details-backLink {
+  font-style: italic;
+  font-size: 25px;
+  color: rgb(77, 76, 75);
+  padding: 30px;
+  padding-right: 100px;
+  text-align: right;
+}
+
+.Orders-table {
+  height: 100px;
+  margin-top: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+ }
