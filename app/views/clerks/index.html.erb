@@ -7,7 +7,7 @@
     <table class="Clerks-table">
         <tbody>
             <% @users.each do |user| %>
-                <tr>
+                <tr style="text-align: center">
                     <td class="Clerks-value1"> <%= user.first_name + " " + user.last_name %> </td>
                     <td class="Clerks-value2"> <%= user.email %> </td>
                     <td>

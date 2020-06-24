@@ -5,7 +5,6 @@
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
   text-align: center;
-  margin-top: 500px;
 }
 
 .MenuPage-notice {
@@ -27,43 +26,44 @@
   margin-bottom: 50px;
 }
 
-.Menu {
-  align-items: center;
-  margin-left: 170px;
-  max-width: 700px;
+.MenuPage-addMenuLink {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.MenuTable {
+  width: 100%;
   border: 1px solid antiquewhite;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
-.Menu-mainDetails {
-  display: flex;
-  margin-bottom: 50px;
-}
-
-.Menu-title {
-  margin-left: 50px;
-  font-size: 25px;
+.Menu-name {
+  font-size: 30px;
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
+  padding: 30px;
 }
 
 .Menu-active {
-  margin-left: 400px;
+  margin-left: 125px;
   font-size: 20px;
   letter-spacing: 0.1px;
   color: rgb(3, 87, 3);
 }
 
 .Menu-notActive {
-  margin-left: 400px;
+  margin-left: 125px;
   font-size: 20px;
   letter-spacing: 0.1px;
   color: rgb(246, 18, 18);
 }
 
 .Menu-options {
-  margin-left: -400px;
   font-size: 20px;
   color: rgb(77, 76, 75);
 }
@@ -102,9 +102,9 @@
 }
 
 .ShowMenu {
-  margin-left: 40%;
   margin-top: 50px;
-  max-width: 500px;
+  width: 100%;
+  text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
@@ -115,7 +115,7 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   text-align: center;
-  margin-bottom: 50px;
+  padding: 50px;
 }
 
 .ShowMenuPage-menuActive {

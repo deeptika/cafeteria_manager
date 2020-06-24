@@ -2,24 +2,29 @@
   <p id="MenuPage-notice"><%= params[:notice] %></p>
 
   <h1 class="MenuPage-title">Menus</h1>
+  <p style="margin-bottom: 50px"><%= link_to "+ Add Menu", new_menu_path, class: "MenuPage-addMenuLink" %></p>
 
-  <% @menus.each do |menu| %>
-    <div class="Menu">
-      <div class="Menu-mainDetails">
-        <p class="Menu-title"><%= menu.menu_name %></p>
-        <% if menu.active %>
-          <p class="Menu-active">ACTIVE</p>
-        <% else %>
-          <p class="Menu-notActive">NOT ACTIVE</p>
-        <% end %>
-      </div>
-      <p class="Menu-options">
-        [<%= link_to "Show", menu %>]
-        [<%= link_to "Edit", edit_menu_path(menu) %>]
-        [<%= link_to "Remove", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
-      </p>
-    </div>
-  <% end %>
-
-  <%= link_to "+ Add Menu", new_menu_path, class: "MenuPage-link" %>
+  <table class="MenuTable">
+    <tbody>
+      <% @menus.each do |menu| %>
+        <tr style="text-align: center">
+          <td class="Menu-name"><%= menu.menu_name %></td>
+          <td>
+            <% if menu.active %>
+              <p class="Menu-active">ACTIVE</p>
+            <% else %>
+              <p class="Menu-notActive">NOT ACTIVE</p>
+            <% end %>
+          </td>
+          <td>
+            <p class="Menu-options">
+              [<%= link_to "Show", menu %>]
+              [<%= link_to "Edit", edit_menu_path(menu) %>]
+              [<%= link_to "Remove", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
+            </p>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </section>
