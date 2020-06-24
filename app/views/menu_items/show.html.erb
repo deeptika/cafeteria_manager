@@ -2,24 +2,21 @@
   <h5 class="ShowMenuPage-notice"><%= params[:notice] %></h5>
 
   <div class="ShowMenuItem">
-    <div class="ShowMenuItemPage-mainDetails">
-      <p class="ShowMenuItemPage-menuItemName">
-        <strong>Name:</strong>
-        <%= @menu_item.menu_item_name %>
-      </p>
+    <p class="ShowMenuItemPage-menuItemName">
+      <strong>Name:</strong> <%= @menu_item.menu_item_name %>
+    </p>
 
-      <p class="ShowMenuItemPage-price">
-        ₹ <%= @menu_item.menu_item_price %>
-      </p>
-    </div>
+    <p class="ShowMenuItemPage-price">
+      <strong>Price:</strong> ₹ <%= @menu_item.menu_item_price %>
+    </p>
+
     <p class="ShowMenuItemPage-menuName">
-      From the menu
-      <%= @menu_item.menu.menu_name %>
+      From the menu "<%= @menu_item.menu.menu_name %>"
     </p>
   </div>
 
   <p class="MenuItemPage-link">
-  <%= link_to "Edit", edit_menu_item_path(@menu_item, :current_menu_id => @current_menu_id) %> |
-  <%= link_to "Back", menu_items_path(:current_menu_id => @current_menu_id) %>
+    <%= link_to "Edit", edit_menu_item_path(@menu_item, :current_menu_id => @current_menu_id) %> |
+    <%= link_to "Back", menu_items_path(:current_menu_id => @current_menu_id) %>
   </p>
 </section>

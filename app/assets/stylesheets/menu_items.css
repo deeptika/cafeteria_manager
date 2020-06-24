@@ -9,9 +9,9 @@
   margin-bottom: 500px;
 }
 
-.MenuItemPage-header, .MenuItemPage-selectMenus, .ShowMenuItemPage-mainDetails {
+.MenuItemPage-header, .MenuItemPage-selectMenus {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .MenuItemPage-title1 {
@@ -78,6 +78,34 @@
 
 /* styling for _display_menu.html.erb */
 
+.ShowMenuItemPage-table {
+  width: 100%;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+  margin-left: 50px;
+}
+
+.MenuItem-name {
+  padding: 30px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+}
+
+.MenuItem-price {
+  padding: 30px;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+}
+
+.MenuItems-options {
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+}
+
+/* styling for show.html.erb */
+
 .ShowMenuItemPage-notice {
   font-size: 17px;
   font-style: italic;
@@ -89,30 +117,27 @@
 }
 
 .ShowMenuItem {
-  margin-left: 20%;
-  max-width: 700px;
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
   border: 1px solid antiquewhite;
   border-radius: 10px;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .ShowMenuItemPage-menuItemName {
-  margin-left: 50px;
-  font-size: 25px;
+  font-size: 36px;
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
+  text-align: center;
+  padding: 50px;
 }
 
 .ShowMenuItemPage-price {
-  margin-left: 400px;
-  font-size: 20px;
+  font-size: 26px;
+  letter-spacing: -1px;
   color: rgb(77, 76, 75);
-}
-
-.ShowMenuItemPage-options {
-  margin-left: 50px;
-  font-size: 20px;
-  color: rgb(77, 76, 75);
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -120,10 +145,9 @@
   font-size: 26px;
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
-  margin-left: 50px;
-  margin-bottom: 50px;
+  text-align: center;
+  padding: 50px;
 }
-
 
 /* styling for _form.html.erb */
 
@@ -183,7 +207,7 @@
 .MenuItemForm-submitButton {
   margin-top: 20px;
   margin-bottom: 50px;
-  margin-left: 40%;
+  text-align: center;
   height: 50px;
   border: 1px solid rgb(216, 98, 1);
   border-radius: 10px;

@@ -16,13 +16,11 @@
               <p class="Menu-notActive">NOT ACTIVE</p>
             <% end %>
           </td>
-          <td>
-            <p class="Menu-options">
-              [<%= link_to "Show", menu %>]
-              [<%= link_to "Edit", edit_menu_path(menu) %>]
-              [<%= link_to "Remove", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
-            </p>
-          </td>
+          <td> <p class="Menu-options"> [<%= link_to "Show", menu %>]</p> </td>
+          <td> <p class="Menu-options"> [<%= link_to "Edit", edit_menu_path(menu) %>]</p> </td>
+          <td> <p class="Menu-options">
+            [<%= link_to "Remove", menu, method: :delete, data: { confirm: "Are you sure?" } %>]
+          </p> </td>
         </tr>
       <% end %>
     </tbody>
