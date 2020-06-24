@@ -1,16 +1,15 @@
 /* styling for new.html.erb */
 
-.NewOrderPage, .YourOrders, .EditOrder {
+.NewOrderPage, .YourOrders, .EditOrder, .DisplayMenu {
   max-width: 1000px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
   text-align: center;
-  margin-left: 250px;
 }
 
 .NewOrderPage-title, .YourOrders-title {
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 32px;
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
@@ -30,11 +29,6 @@
 /* styling for _display_menu.html.erb */
 
  .DisplayMenu {
-  max-width: 1000px;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
-  text-align: center;
   margin-top: 100px;
  }
 
@@ -72,7 +66,6 @@
 
  .NewOrderPage-submitButton {
   margin-top: 75px;
-  margin-left: 47%;
   align-items: center;
   text-align: center;
   height: 50px;
@@ -90,7 +83,6 @@
   margin-top: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
-  margin-left: 300px;
   width: 100%;
   max-width: 1000px;
  }
@@ -110,8 +102,7 @@
   letter-spacing: -1px;
   color: rgb(216, 98, 1);
   margin-bottom: 80px;
-  text-align: left;
-  margin-left: 300px;
+  text-align: center;
 }
 
 .YourOrders-link {
@@ -119,8 +110,7 @@
   font-size: 20px;
   color: rgb(77, 76, 75);
   padding-bottom: 50px;
-  text-align: left;
-  margin-left: 300px;
+  text-align: center;
 }
 
 .YourTable-tableHeader {
