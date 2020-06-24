@@ -14,7 +14,7 @@ class User < ApplicationRecord
     User.find(user_id).role == "owner"
   end
 
-  def is_clerk(user_id)
-    User.find(user_id).role == "clerk"
+  def is_clerk()
+    role == "clerk"
   end
 end

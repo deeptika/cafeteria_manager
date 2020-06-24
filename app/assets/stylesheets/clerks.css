@@ -1,16 +1,13 @@
-.NewUserPage {
+/* styling for new.html.erb*/
+
+.Clerks, .AddClerk {
   max-width: 1000px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
 }
 
-.NewUserPage-header {
-  margin-top: 100px;
-  margin-bottom: 50px;
-}
-
-.NewUserPage-title {
+.Clerks-title, .AddClerk-title {
   font-size: 32px;
   color: rgb(216, 98, 1);
   letter-spacing: -1px;
@@ -18,7 +15,7 @@
   padding-bottom: 20px;
 }
 
-.NewUserForm {
+.ClerkForm {
   background-color: white;
   display: flex;
   margin: 50px auto;
@@ -31,7 +28,7 @@
   padding-right: 30px;
 }
 
-.NewUserForm-field {
+.ClerkForm-field {
   padding-top: 50px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -40,12 +37,12 @@
   align-items: center;
 }
 
-.NewUserForm-label {
+.ClerkForm-label {
   font-size: 25px;
   color: rgb(104, 102, 101);
 }
 
-.NewUserForm-input1 {
+.ClerkForm-input1 {
   margin-left: 50px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
@@ -53,7 +50,7 @@
   background-color: white;
 }
 
-.NewUserForm-input2 {
+.ClerkForm-input2 {
   margin-left: 50px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
@@ -61,7 +58,7 @@
   background-color: white;
 }
 
-.NewUserForm-input3 {
+.ClerkForm-input3 {
   margin-left: 108px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
@@ -69,7 +66,7 @@
   background-color: white;
 }
 
-.NewUserForm-input4 {
+.ClerkForm-input4 {
   margin-left: 61px;
   height: 25px;
   border: 1px solid rgb(151, 150, 149);
@@ -77,7 +74,7 @@
   background-color: white;
 }
 
-.NewUserForm-submitButton {
+.ClerkForm-submitButton {
   margin-left: 30%;
   margin-top: 30px;
   margin-bottom: 50px;
@@ -89,4 +86,54 @@
   color: white;
   font-size: 25px;
   text-align: center;
+}
+
+/* styling for index.html.erb */
+
+.Clerks-notice {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(194, 110, 15);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.Clerks-addClerkLink {
+  margin-top: 30px;
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.Clerks-table {
+  width: 100%;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.Clerks-value1 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  color: rgb(216, 98, 1);
+  padding: 30px;
+}
+
+.Clerks-value2 {
+  font-size: 25px;
+  font-style: italic;
+  letter-spacing: -1px;
+  color: rgb(77, 76, 75);
+  padding: 30px;
+}
+
+.Clerks-link {
+  font-style: italic;
+  font-size: 20px;
+  color: rgb(77, 76, 75);
+  padding: 30px;
 }

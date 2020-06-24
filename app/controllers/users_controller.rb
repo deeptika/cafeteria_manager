@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_login
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -28,5 +29,18 @@ class UsersController < ApplicationController
         redirect_to new_clerk_path
       end
     end
+  end
+
+  def destroy
+    if @user.is_clerk
+      @user.destroy
+      redirect_to clerks_path(:notice => "User was successfully Removed.")
+    end
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

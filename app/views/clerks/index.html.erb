@@ -1,31 +1,21 @@
-<section>
-    <h4 id="notice"><%= params[:notice] %></h4>
+<section class="Clerks">
+    <h4 class="Clerks-notice"><%= params[:notice] %></h4>
 
-    <h1>Clerks</h1>
+    <h1 class="Clerks-title">List of all clerks and their email IDs</h1>
+    <p class="Clerks-addClerkLink"><%= link_to "Add clerk", new_clerk_path %></p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Email</th>
-                <th>Remove</th>
-            </tr>
-        </thead>
-
+    <table class="Clerks-table">
         <tbody>
             <% @users.each do |user| %>
                 <tr>
-                    <td> <%= user.first_name %> </td>
-                    <td> <%= user.last_name %> </td>
-                    <td> <%= user.email %> </td>
-                    <td> <%= link_to "Remove", user, method: :delete, data: { confirm: "Are you sure?" } %></td>
+                    <td class="Clerks-value1"> <%= user.first_name + " " + user.last_name %> </td>
+                    <td class="Clerks-value2"> <%= user.email %> </td>
+                    <td>
+                        <p class="Clerks-link">
+                            [ <%= link_to "Remove", user, method: :delete, data: { confirm: "Are you sure?" } %> ]</p>
+                    </td>
                 </tr>
             <% end %>
         </tbody>
     </table>
-
-    <br>
-
-    <%= link_to "Add clerk", new_clerk_path %>
 </section>

@@ -1,27 +1,25 @@
-<section>
-    <h1> Add New Clerk </h1>
+<section class="AddClerk">
+    <h1 class="AddClerk-title"> Add New Clerk </h1>
 
-    <section>
+    <section class="ClerkForm">
         <%= form_with url: users_path do |form| %>
-            <div>
-                <p>First Name </p>
-                <%= form.text_field :first_name %>
+            <div class="ClerkForm-field">
+                <p class="ClerkForm-label">First Name</p>
+                <%= form.text_field :first_name, class: "ClerkForm-input1" %>
             </div>
-            <div>
-                <p>Last Name </p>
-                <%= form.text_field :last_name %>
+            <div class="ClerkForm-field">
+                <p class="ClerkForm-label">Last Name</p>
+                <%= form.text_field :last_name, class: "ClerkForm-input2" %>
             </div>
-            <div>
-                <p>Email </p>
-                <%= form.email_field :email %>
+            <div class="ClerkForm-field">
+                <p class="ClerkForm-label">Email</p>
+                <%= form.email_field :email, class: "ClerkForm-input3" %>
             </div>
-            <div>
-                <p>Password </p>
-                <%= form.password_field :password %>
+            <div class="ClerkForm-field">
+                <p class="ClerkForm-label">Password</p>
+                <%= form.password_field :password, class: "ClerkForm-input4" %>
             </div>
-            <div>
-                <%= form.submit "Add clerk" %>
-            </div>
+            <%= form.submit "Add clerk", class: "ClerkForm-submitButton" %>
             <%= hidden_field_tag "role", "clerk" %>
         <% end %>
     </section>
